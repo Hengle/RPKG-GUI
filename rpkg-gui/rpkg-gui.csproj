@@ -317,7 +317,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Condition="'$(Configuration)' == 'Release'" Include="..\_build\$(Configuration)\rpkg.dll" LogicalName="costura64.rpkg.dll" ManifestResourceName="costura64.rpkg.dll" />
+    <EmbeddedResource Condition="'$(Configuration)' == 'Release'" Include="..\_build\$(Configuration)\rpkg-lib.dll" LogicalName="costura64.rpkg-lib.dll" ManifestResourceName="costura64.rpkg-lib.dll" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resource files\bricks.png" />
@@ -339,6 +339,22 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resource files\bullet_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="rpkg-lib.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AdditionalFiles>
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="ResourceLib_HM2.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AdditionalFiles>
+    <AdditionalFiles Include="ResourceLib_HM2016.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AdditionalFiles>
+    <AdditionalFiles Include="ResourceLib_HM3.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AdditionalFiles>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

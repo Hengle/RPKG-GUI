@@ -409,31 +409,31 @@ namespace rpkg
         public int task_status = 0;
         public string task_status_string = "";
 
-        [DllImport("rpkg.dll", EntryPoint = "get_current_percent", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "get_current_percent", CallingConvention = CallingConvention.Cdecl)]
         public static extern int get_current_percent();
 
-        [DllImport("rpkg.dll", EntryPoint = "get_task_single_status", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "get_task_single_status", CallingConvention = CallingConvention.Cdecl)]
         public static extern int get_task_single_status();
 
-        [DllImport("rpkg.dll", EntryPoint = "reset_task_single_status", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "reset_task_single_status", CallingConvention = CallingConvention.Cdecl)]
         public static extern int reset_task_single_status();
 
-        [DllImport("rpkg.dll", EntryPoint = "get_task_multiple_status", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "get_task_multiple_status", CallingConvention = CallingConvention.Cdecl)]
         public static extern int get_task_multiple_status();
 
-        [DllImport("rpkg.dll", EntryPoint = "reset_task_multiple_status", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "reset_task_multiple_status", CallingConvention = CallingConvention.Cdecl)]
         public static extern int reset_task_multiple_status();
 
-        [DllImport("rpkg.dll", EntryPoint = "set_gui_control", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "set_gui_control", CallingConvention = CallingConvention.Cdecl)]
         public static extern int set_gui_control(int gui_control_value);
 
-        [DllImport("rpkg.dll", EntryPoint = "get_gui_control", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "get_gui_control", CallingConvention = CallingConvention.Cdecl)]
         public static extern int get_gui_control();
 
-        [DllImport("rpkg.dll", EntryPoint = "get_timing_string", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "get_timing_string", CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr get_timing_string();
 
-        [DllImport("rpkg.dll", EntryPoint = "get_task_status_string", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "get_task_status_string", CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr get_task_status_string();
     }
 }

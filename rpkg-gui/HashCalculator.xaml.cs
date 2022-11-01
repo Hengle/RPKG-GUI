@@ -153,7 +153,7 @@ namespace rpkg
 
 
 
-        [DllImport("rpkg.dll", EntryPoint = "get_hash_name_from_hash_value", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "get_hash_name_from_hash_value", CallingConvention = CallingConvention.Cdecl)]
         public static extern bool get_hash_name_from_hash_value(UInt64 hash_value, [Out, MarshalAs(UnmanagedType.LPArray, SizeConst = 22)] char[] hash_name);
 
     }

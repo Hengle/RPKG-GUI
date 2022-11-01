@@ -4701,272 +4701,311 @@ private enum OggPlayerState
 		public delegate int execute_deep_search_localization(string input_path, string search_value, int search_dlge, int search_locr, int search_rtlv, int max_results);
 		public delegate int execute_deep_search_entities(string input_path, string search_value, int search_entity_ids, int search_entity_names, int search_property_names, int search_property_values, int max_results);
 
-		[DllImport("rpkg.dll", EntryPoint = "task_execute", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int task_execute(string csharp_command, string csharp_input_path, string csharp_filter, string search, string search_type, string csharp_output_path);
+		[DllImport("rpkg-lib.dll", EntryPoint = "task_execute", CallingConvention = CallingConvention.Cdecl)]
+		public static extern int task_execute(string csharp_command, string csharp_input_path, string csharp_filter,
+			string search, string search_type, string csharp_output_path);
 
-		[DllImport("rpkg.dll", EntryPoint = "get_current_percent", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_current_percent", CallingConvention = CallingConvention.Cdecl)]
 		public static extern int get_current_percent();
 
-		[DllImport("rpkg.dll", EntryPoint = "reset_task_status", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "reset_task_status", CallingConvention = CallingConvention.Cdecl)]
 		public static extern int reset_task_status();
 
-		[DllImport("rpkg.dll", EntryPoint = "reset_task_single_status", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "reset_task_single_status",
+			CallingConvention = CallingConvention.Cdecl)]
 		public static extern int reset_task_single_status();
 
-		[DllImport("rpkg.dll", EntryPoint = "get_resource_types_count", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_resource_types_count",
+			CallingConvention = CallingConvention.Cdecl)]
 		public static extern UInt32 get_resource_types_count(string rpkg_file);
 
-		[DllImport("rpkg.dll", EntryPoint = "get_resource_types_at", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_resource_types_at", CallingConvention = CallingConvention.Cdecl)]
 		public static extern IntPtr get_resource_types_at(string rpkg_file, UInt32 at_index);
 
-		[DllImport("rpkg.dll", EntryPoint = "get_resource_types_data_size", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_resource_types_data_size",
+			CallingConvention = CallingConvention.Cdecl)]
 		public static extern UInt64 get_resource_types_data_size(string rpkg_file, string resource_type);
 
-		[DllImport("rpkg.dll", EntryPoint = "get_hash_based_on_resource_type_count", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_hash_based_on_resource_type_count",
+			CallingConvention = CallingConvention.Cdecl)]
 		public static extern UInt32 get_hash_based_on_resource_type_count(string rpkg_file, string resource_type);
 
-		[DllImport("rpkg.dll", EntryPoint = "get_hash_based_on_resource_type_at", CallingConvention = CallingConvention.Cdecl)]
-		public static extern IntPtr get_hash_based_on_resource_type_at(string rpkg_file, string resource_type, UInt32 at_index);
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_hash_based_on_resource_type_at",
+			CallingConvention = CallingConvention.Cdecl)]
+		public static extern IntPtr get_hash_based_on_resource_type_at(string rpkg_file, string resource_type,
+			UInt32 at_index);
 
-		[DllImport("rpkg.dll", EntryPoint = "get_all_hashes_in_rpkg_count", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_all_hashes_in_rpkg_count",
+			CallingConvention = CallingConvention.Cdecl)]
 		public static extern UInt32 get_all_hashes_in_rpkg_count(string rpkg_file);
 
-		[DllImport("rpkg.dll", EntryPoint = "get_hash_details", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_hash_details", CallingConvention = CallingConvention.Cdecl)]
 		public static extern IntPtr get_hash_details(string rpkg_file, string hash_string);
 
-		[DllImport("rpkg.dll", EntryPoint = "get_hash_in_rpkg_size", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_hash_in_rpkg_size", CallingConvention = CallingConvention.Cdecl)]
 		public static extern UInt32 get_hash_in_rpkg_size(string rpkg_file_name, string hash_string);
 
-		[DllImport("rpkg.dll", EntryPoint = "get_hash_in_rpkg_data", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_hash_in_rpkg_data", CallingConvention = CallingConvention.Cdecl)]
 		public static extern IntPtr get_hash_in_rpkg_data(string rpkg_file_name, string hash_string);
 
-		[DllImport("rpkg.dll", EntryPoint = "get_all_hashes_in_rpkg_data_size", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_all_hashes_in_rpkg_data_size",
+			CallingConvention = CallingConvention.Cdecl)]
 		public static extern UInt64 get_all_hashes_in_rpkg_data_size(string rpkg_file);
 
-		[DllImport("rpkg.dll", EntryPoint = "clear_hash_data_vector", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "clear_hash_data_vector", CallingConvention = CallingConvention.Cdecl)]
 		public static extern int clear_hash_data_vector();
 
-		[DllImport("rpkg.dll", EntryPoint = "get_hash_in_rpkg_data_in_hex_view", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_hash_in_rpkg_data_in_hex_view",
+			CallingConvention = CallingConvention.Cdecl)]
 		public static extern IntPtr get_hash_in_rpkg_data_in_hex_view(string rpkg_file_name, string hash_string);
 
-		[DllImport("rpkg.dll", EntryPoint = "generate_localization_string", CallingConvention = CallingConvention.Cdecl)]
-		public static extern UInt32 generate_localization_string(string rpkg_file_name, string hash_string, string resource_type);
+		[DllImport("rpkg-lib.dll", EntryPoint = "generate_localization_string",
+			CallingConvention = CallingConvention.Cdecl)]
+		public static extern UInt32 generate_localization_string(string rpkg_file_name, string hash_string,
+			string resource_type);
 
-		[DllImport("rpkg.dll", EntryPoint = "generate_localization_line_string", CallingConvention = CallingConvention.Cdecl)]
-		public static extern UInt32 generate_localization_line_string(string rpkg_file_name, string hash_string, string resource_type);
+		[DllImport("rpkg-lib.dll", EntryPoint = "generate_localization_line_string",
+			CallingConvention = CallingConvention.Cdecl)]
+		public static extern UInt32 generate_localization_line_string(string rpkg_file_name, string hash_string,
+			string resource_type);
 
-		[DllImport("rpkg.dll", EntryPoint = "get_localization_string", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_localization_string", CallingConvention = CallingConvention.Cdecl)]
 		public static extern IntPtr get_localization_string();
 
-		[DllImport("rpkg.dll", EntryPoint = "get_localization_line_string", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_localization_line_string",
+			CallingConvention = CallingConvention.Cdecl)]
 		public static extern IntPtr get_localization_line_string();
 
-		[DllImport("rpkg.dll", EntryPoint = "generate_json_string", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "generate_json_string", CallingConvention = CallingConvention.Cdecl)]
 		public static extern UInt32 generate_json_string(string rpkg_file_name, string hash_string);
 
-		[DllImport("rpkg.dll", EntryPoint = "get_json_string", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_json_string", CallingConvention = CallingConvention.Cdecl)]
 		public static extern IntPtr get_json_string();
 
-		[DllImport("rpkg.dll", EntryPoint = "get_hashes_with_no_reverse_depends", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_hashes_with_no_reverse_depends",
+			CallingConvention = CallingConvention.Cdecl)]
 		public static extern IntPtr get_hashes_with_no_reverse_depends();
 
-		[DllImport("rpkg.dll", EntryPoint = "load_hash_list", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "load_hash_list", CallingConvention = CallingConvention.Cdecl)]
 		public static extern int load_hash_list(string path);
 
-		[DllImport("rpkg.dll", EntryPoint = "get_hash_list_string", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_hash_list_string", CallingConvention = CallingConvention.Cdecl)]
 		public static extern IntPtr get_hash_list_string(string hash_string);
 
-		[DllImport("rpkg.dll", EntryPoint = "get_hashes_with_no_reverse_depends", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_hashes_with_no_reverse_depends",
+			CallingConvention = CallingConvention.Cdecl)]
 		public static extern int get_hashes_with_no_reverse_depends(string rpkg_file);
 
-		[DllImport("rpkg.dll", EntryPoint = "get_hashes_with_no_reverse_depends_string", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_hashes_with_no_reverse_depends_string",
+			CallingConvention = CallingConvention.Cdecl)]
 		public static extern IntPtr get_hashes_with_no_reverse_depends_string();
 
-		[DllImport("rpkg.dll", EntryPoint = "get_direct_hash_depends", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_direct_hash_depends", CallingConvention = CallingConvention.Cdecl)]
 		public static extern int get_direct_hash_depends(string rpkg_file, string hash_string);
 
-		[DllImport("rpkg.dll", EntryPoint = "get_direct_hash_depends_string", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_direct_hash_depends_string",
+			CallingConvention = CallingConvention.Cdecl)]
 		public static extern IntPtr get_direct_hash_depends_string();
 
-		[DllImport("rpkg.dll", EntryPoint = "get_patch_deletion_list", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_patch_deletion_list", CallingConvention = CallingConvention.Cdecl)]
 		public static extern IntPtr get_patch_deletion_list(string rpkg_file);
 
-		[DllImport("rpkg.dll", EntryPoint = "search_imported_hashes", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int search_imported_hashes(string search_str, string rpkg_file, string resource_type, int max_results);
+		[DllImport("rpkg-lib.dll", EntryPoint = "search_imported_hashes", CallingConvention = CallingConvention.Cdecl)]
+		public static extern int search_imported_hashes(string search_str, string rpkg_file, string resource_type,
+			int max_results);
 
-		[DllImport("rpkg.dll", EntryPoint = "get_search_imported_hashes", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_search_imported_hashes",
+			CallingConvention = CallingConvention.Cdecl)]
 		public static extern IntPtr get_search_imported_hashes();
 
-		[DllImport("rpkg.dll", EntryPoint = "search_hash_list", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "search_hash_list", CallingConvention = CallingConvention.Cdecl)]
 		public static extern int search_hash_list(string search_str, int max_results);
 
-		[DllImport("rpkg.dll", EntryPoint = "get_search_hash_list", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_search_hash_list", CallingConvention = CallingConvention.Cdecl)]
 		public static extern IntPtr get_search_hash_list();
 
-		[DllImport("rpkg.dll", EntryPoint = "get_rpkg_file_paths_hash_is_in", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_rpkg_file_paths_hash_is_in",
+			CallingConvention = CallingConvention.Cdecl)]
 		public static extern IntPtr get_rpkg_file_paths_hash_is_in(string hash_string);
 
-		[DllImport("rpkg.dll", EntryPoint = "create_ogg_file_from_hash_in_rpkg", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int create_ogg_file_from_hash_in_rpkg(string rpkg_file, string hash_string, int command, int wwev_number);
+		[DllImport("rpkg-lib.dll", EntryPoint = "create_ogg_file_from_hash_in_rpkg",
+			CallingConvention = CallingConvention.Cdecl)]
+		public static extern int create_ogg_file_from_hash_in_rpkg(string rpkg_file, string hash_string, int command,
+			int wwev_number);
 
-		[DllImport("rpkg.dll", EntryPoint = "convert_ogg_to_pcm", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "convert_ogg_to_pcm", CallingConvention = CallingConvention.Cdecl)]
 		public static extern int convert_ogg_to_pcm(string input_path, string output_path);
 
-		[DllImport("rpkg.dll", EntryPoint = "get_pcm_sample_size", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_pcm_sample_size", CallingConvention = CallingConvention.Cdecl)]
 		public static extern int get_pcm_sample_size();
 
-		[DllImport("rpkg.dll", EntryPoint = "get_pcm_sample_rate", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_pcm_sample_rate", CallingConvention = CallingConvention.Cdecl)]
 		public static extern int get_pcm_sample_rate();
 
-		[DllImport("rpkg.dll", EntryPoint = "get_pcm_channels", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_pcm_channels", CallingConvention = CallingConvention.Cdecl)]
 		public static extern int get_pcm_channels();
 
-		[DllImport("rpkg.dll", EntryPoint = "clear_temp_tblu_data", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("rpkg-lib.dll", EntryPoint = "clear_temp_tblu_data", CallingConvention = CallingConvention.Cdecl)]
 		public static extern int clear_temp_tblu_data();
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_matrix_data_from_godot_scene",
+			CallingConvention = CallingConvention.Cdecl)]
+		public static extern IntPtr get_matrix_data_from_godot_scene(string input_path);
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "load_recursive_temps", CallingConvention = CallingConvention.Cdecl)]
+		public static extern int load_recursive_temps(string temp_hash, string rpkg_file_path, UInt32 temp_version);
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "load_non_recursive_temps",
+			CallingConvention = CallingConvention.Cdecl)]
+		public static extern int load_non_recursive_temps(string temp_hash, string rpkg_file_path, UInt32 temp_version);
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_temp_index", CallingConvention = CallingConvention.Cdecl)]
+		public static extern int get_temp_index(string temp_hash_string);
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "generate_png_from_text", CallingConvention = CallingConvention.Cdecl)]
+		public static extern int generate_png_from_text(string rpkg_file, string hash_string, string png_path);
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "unload_rpkg", CallingConvention = CallingConvention.Cdecl)]
+		public static extern int unload_rpkg(string rpkg_file);
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "modify_patch_deletion_list",
+			CallingConvention = CallingConvention.Cdecl)]
+		public static extern int modify_patch_deletion_list(string rpkg_file, string patch_list, UInt32 patch_count,
+			UInt32 backup_rpkg);
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "modify_hash_depends", CallingConvention = CallingConvention.Cdecl)]
+		public static extern int modify_hash_depends(string rpkg_file, string hash_string, string hash_list,
+			string hash_flag_list, UInt32 hash_count, UInt32 backup_rpkg);
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_temp_version", CallingConvention = CallingConvention.Cdecl)]
+		public static extern int get_temp_version(string temp_hash, string rpkg_file_path);
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "set_temp_version", CallingConvention = CallingConvention.Cdecl)]
+		public static extern int set_temp_version(UInt32 temps_index, UInt32 temp_version);
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "import_rpkgs", CallingConvention = CallingConvention.Cdecl)]
+		public static extern int import_rpkgs(string rpkgs_path, string rpkgs_list);
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "is_rpkg_valid", CallingConvention = CallingConvention.Cdecl)]
+		public static extern int is_rpkg_valid(string rpkg_file_path);
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_response_string", CallingConvention = CallingConvention.Cdecl)]
+		public static extern IntPtr get_response_string();
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_task_single_status", CallingConvention = CallingConvention.Cdecl)]
+		public static extern int get_task_single_status();
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_task_multiple_status",
+			CallingConvention = CallingConvention.Cdecl)]
+		public static extern int get_task_multiple_status();
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "reset_task_multiple_status",
+			CallingConvention = CallingConvention.Cdecl)]
+		public static extern int reset_task_multiple_status();
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "set_gui_control", CallingConvention = CallingConvention.Cdecl)]
+		public static extern int set_gui_control(int gui_control_value);
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_gui_control", CallingConvention = CallingConvention.Cdecl)]
+		public static extern int get_gui_control();
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_timing_string", CallingConvention = CallingConvention.Cdecl)]
+		public static extern IntPtr get_timing_string();
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_task_status_string", CallingConvention = CallingConvention.Cdecl)]
+		public static extern IntPtr get_task_status_string();
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "deep_search_localization", CallingConvention = CallingConvention.Cdecl)]
+		public static extern int deep_search_localization(string input_path, string search_value, int search_dlge,
+			int search_locr, int search_rtlv, int max_results);
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_localization_search_results_size",
+			CallingConvention = CallingConvention.Cdecl)]
+		public static extern UInt32 get_localization_search_results_size();
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_localization_search_results",
+			CallingConvention = CallingConvention.Cdecl)]
+		public static extern IntPtr get_localization_search_results();
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "deep_search_entities", CallingConvention = CallingConvention.Cdecl)]
+		public static extern int deep_search_entities(string input_path, string search_value, int search_entity_ids,
+			int search_entity_names, int search_property_names, int search_property_values, int max_results);
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_entities_search_results_size",
+			CallingConvention = CallingConvention.Cdecl)]
+		public static extern UInt32 get_entities_search_results_size();
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_entities_search_results",
+			CallingConvention = CallingConvention.Cdecl)]
+		public static extern IntPtr get_entities_search_results();
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "is_repo_loaded", CallingConvention = CallingConvention.Cdecl)]
+		public static extern UInt32 is_repo_loaded();
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "is_ores_loaded", CallingConvention = CallingConvention.Cdecl)]
+		public static extern UInt32 is_ores_loaded();
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "load_repo", CallingConvention = CallingConvention.Cdecl)]
+		public static extern int load_repo();
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "reset_repos", CallingConvention = CallingConvention.Cdecl)]
+		public static extern int reset_repos();
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_repo_response_data_size",
+			CallingConvention = CallingConvention.Cdecl)]
+		public static extern UInt32 get_repo_response_data_size();
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_repo_response_data", CallingConvention = CallingConvention.Cdecl)]
+		public static extern IntPtr get_repo_response_data();
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_repo_child_entries", CallingConvention = CallingConvention.Cdecl)]
+		public static extern int get_repo_child_entries(string id);
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_repo_category", CallingConvention = CallingConvention.Cdecl)]
+		public static extern int get_repo_category(int category);
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_repo_json", CallingConvention = CallingConvention.Cdecl)]
+		public static extern int get_repo_json(string id);
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_repo_image_hash", CallingConvention = CallingConvention.Cdecl)]
+		public static extern IntPtr get_repo_image_hash(string id);
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_latest_hash_rpkg_path",
+			CallingConvention = CallingConvention.Cdecl)]
+		public static extern IntPtr get_latest_hash_rpkg_path(string hash);
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "is_valid_json", CallingConvention = CallingConvention.Cdecl)]
+		public static extern int is_valid_json(string json);
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "check_json", CallingConvention = CallingConvention.Cdecl)]
+		public static extern IntPtr check_json(string json);
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "load_repo_from_file", CallingConvention = CallingConvention.Cdecl)]
+		public static extern int load_repo_from_file(string repo_path);
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "create_patch", CallingConvention = CallingConvention.Cdecl)]
+		public static extern int create_patch(string patch_path);
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "import_patch", CallingConvention = CallingConvention.Cdecl)]
+		public static extern int import_patch(string patch_path);
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "save_json", CallingConvention = CallingConvention.Cdecl)]
+		public static extern int save_json(string id, string json);
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "duplicate_repo_entry", CallingConvention = CallingConvention.Cdecl)]
+		public static extern int duplicate_repo_entry(string id);
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "erase_repo_entry", CallingConvention = CallingConvention.Cdecl)]
+		public static extern int erase_repo_entry(string id);
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "get_repo_entry", CallingConvention = CallingConvention.Cdecl)]
+		public static extern int get_repo_entry(string id);
+
+		[DllImport("rpkg-lib.dll", EntryPoint = "update_json_at_pointer", CallingConvention = CallingConvention.Cdecl)]
+		public static extern int update_json_at_pointer(string id, string json_pointer, string value);
 
 		[DllImport("resourcetool.dll", EntryPoint = "convert_temp_to_json", CallingConvention = CallingConvention.Cdecl)]
 		public static extern int convert_temp_to_json(string input_path, string output_path, string operating_mode);
-
-		[DllImport("rpkg.dll", EntryPoint = "get_matrix_data_from_godot_scene", CallingConvention = CallingConvention.Cdecl)]
-		public static extern IntPtr get_matrix_data_from_godot_scene(string input_path);
-
-		[DllImport("rpkg.dll", EntryPoint = "load_recursive_temps", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int load_recursive_temps(string temp_hash, string rpkg_file_path, UInt32 temp_version);
-
-		[DllImport("rpkg.dll", EntryPoint = "load_non_recursive_temps", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int load_non_recursive_temps(string temp_hash, string rpkg_file_path, UInt32 temp_version);
-
-		[DllImport("rpkg.dll", EntryPoint = "get_temp_index", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int get_temp_index(string temp_hash_string);
-
-		[DllImport("rpkg.dll", EntryPoint = "generate_png_from_text", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int generate_png_from_text(string rpkg_file, string hash_string, string png_path);
-
-		[DllImport("rpkg.dll", EntryPoint = "unload_rpkg", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int unload_rpkg(string rpkg_file);
-
-		[DllImport("rpkg.dll", EntryPoint = "modify_patch_deletion_list", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int modify_patch_deletion_list(string rpkg_file, string patch_list, UInt32 patch_count, UInt32 backup_rpkg);
-
-		[DllImport("rpkg.dll", EntryPoint = "modify_hash_depends", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int modify_hash_depends(string rpkg_file, string hash_string, string hash_list, string hash_flag_list, UInt32 hash_count, UInt32 backup_rpkg);
-
-		[DllImport("rpkg.dll", EntryPoint = "get_temp_version", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int get_temp_version(string temp_hash, string rpkg_file_path);
-
-		[DllImport("rpkg.dll", EntryPoint = "set_temp_version", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int set_temp_version(UInt32 temps_index, UInt32 temp_version);
-
-		[DllImport("rpkg.dll", EntryPoint = "import_rpkgs", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int import_rpkgs(string rpkgs_path, string rpkgs_list);
-
-		[DllImport("rpkg.dll", EntryPoint = "is_rpkg_valid", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int is_rpkg_valid(string rpkg_file_path);
-
-		[DllImport("rpkg.dll", EntryPoint = "get_response_string", CallingConvention = CallingConvention.Cdecl)]
-		public static extern IntPtr get_response_string();
-
-		[DllImport("rpkg.dll", EntryPoint = "get_task_single_status", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int get_task_single_status();
-
-		[DllImport("rpkg.dll", EntryPoint = "get_task_multiple_status", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int get_task_multiple_status();
-
-		[DllImport("rpkg.dll", EntryPoint = "reset_task_multiple_status", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int reset_task_multiple_status();
-
-		[DllImport("rpkg.dll", EntryPoint = "set_gui_control", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int set_gui_control(int gui_control_value);
-
-		[DllImport("rpkg.dll", EntryPoint = "get_gui_control", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int get_gui_control();
-
-		[DllImport("rpkg.dll", EntryPoint = "get_timing_string", CallingConvention = CallingConvention.Cdecl)]
-		public static extern IntPtr get_timing_string();
-
-		[DllImport("rpkg.dll", EntryPoint = "get_task_status_string", CallingConvention = CallingConvention.Cdecl)]
-		public static extern IntPtr get_task_status_string();
-
-		[DllImport("rpkg.dll", EntryPoint = "deep_search_localization", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int deep_search_localization(string input_path, string search_value, int search_dlge, int search_locr, int search_rtlv, int max_results);
-
-		[DllImport("rpkg.dll", EntryPoint = "get_localization_search_results_size", CallingConvention = CallingConvention.Cdecl)]
-		public static extern UInt32 get_localization_search_results_size();
-
-		[DllImport("rpkg.dll", EntryPoint = "get_localization_search_results", CallingConvention = CallingConvention.Cdecl)]
-		public static extern IntPtr get_localization_search_results();
-
-		[DllImport("rpkg.dll", EntryPoint = "deep_search_entities", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int deep_search_entities(string input_path, string search_value, int search_entity_ids, int search_entity_names, int search_property_names, int search_property_values, int max_results);
-
-		[DllImport("rpkg.dll", EntryPoint = "get_entities_search_results_size", CallingConvention = CallingConvention.Cdecl)]
-		public static extern UInt32 get_entities_search_results_size();
-
-		[DllImport("rpkg.dll", EntryPoint = "get_entities_search_results", CallingConvention = CallingConvention.Cdecl)]
-		public static extern IntPtr get_entities_search_results();
-
-		[DllImport("rpkg.dll", EntryPoint = "is_repo_loaded", CallingConvention = CallingConvention.Cdecl)]
-		public static extern UInt32 is_repo_loaded();
-
-		[DllImport("rpkg.dll", EntryPoint = "is_ores_loaded", CallingConvention = CallingConvention.Cdecl)]
-		public static extern UInt32 is_ores_loaded();
-
-		[DllImport("rpkg.dll", EntryPoint = "load_repo", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int load_repo();
-
-		[DllImport("rpkg.dll", EntryPoint = "reset_repos", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int reset_repos();
-
-		[DllImport("rpkg.dll", EntryPoint = "get_repo_response_data_size", CallingConvention = CallingConvention.Cdecl)]
-		public static extern UInt32 get_repo_response_data_size();
-
-		[DllImport("rpkg.dll", EntryPoint = "get_repo_response_data", CallingConvention = CallingConvention.Cdecl)]
-		public static extern IntPtr get_repo_response_data();
-
-		[DllImport("rpkg.dll", EntryPoint = "get_repo_child_entries", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int get_repo_child_entries(string id);
-
-		[DllImport("rpkg.dll", EntryPoint = "get_repo_category", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int get_repo_category(int category);
-
-		[DllImport("rpkg.dll", EntryPoint = "get_repo_json", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int get_repo_json(string id);
-
-		[DllImport("rpkg.dll", EntryPoint = "get_repo_image_hash", CallingConvention = CallingConvention.Cdecl)]
-		public static extern IntPtr get_repo_image_hash(string id);
-
-		[DllImport("rpkg.dll", EntryPoint = "get_latest_hash_rpkg_path", CallingConvention = CallingConvention.Cdecl)]
-		public static extern IntPtr get_latest_hash_rpkg_path(string hash);
-
-		[DllImport("rpkg.dll", EntryPoint = "is_valid_json", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int is_valid_json(string json);
-
-		[DllImport("rpkg.dll", EntryPoint = "check_json", CallingConvention = CallingConvention.Cdecl)]
-		public static extern IntPtr check_json(string json);
-
-		[DllImport("rpkg.dll", EntryPoint = "load_repo_from_file", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int load_repo_from_file(string repo_path);
-
-		[DllImport("rpkg.dll", EntryPoint = "create_patch", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int create_patch(string patch_path);
-
-		[DllImport("rpkg.dll", EntryPoint = "import_patch", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int import_patch(string patch_path);
-
-		[DllImport("rpkg.dll", EntryPoint = "save_json", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int save_json(string id, string json);
-
-		[DllImport("rpkg.dll", EntryPoint = "duplicate_repo_entry", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int duplicate_repo_entry(string id);
-
-		[DllImport("rpkg.dll", EntryPoint = "erase_repo_entry", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int erase_repo_entry(string id);
-
-		[DllImport("rpkg.dll", EntryPoint = "get_repo_entry", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int get_repo_entry(string id);
-
-		[DllImport("rpkg.dll", EntryPoint = "update_json_at_pointer", CallingConvention = CallingConvention.Cdecl)]
-		public static extern int update_json_at_pointer(string id, string json_pointer, string value);
 
 		private void LoadResources()
 		{

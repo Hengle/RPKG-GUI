@@ -3386,91 +3386,91 @@ namespace rpkg
 
         #region imported methods
 
-        [DllImport("rpkg.dll", EntryPoint = "task_execute", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "task_execute", CallingConvention = CallingConvention.Cdecl)]
         public static extern int task_execute(string csharp_command, string csharp_input_path, string csharp_filter, string search, string search_type, string csharp_output_path);
 
-        [DllImport("rpkg.dll", EntryPoint = "reset_task_status", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "reset_task_status", CallingConvention = CallingConvention.Cdecl)]
         public static extern int reset_task_status();
 
-        [DllImport("rpkg.dll", EntryPoint = "clear_temp_tblu_data", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "clear_temp_tblu_data", CallingConvention = CallingConvention.Cdecl)]
         public static extern int clear_temp_tblu_data();
 
-        [DllImport("rpkg.dll", EntryPoint = "get_entries_with_logical_parent", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "get_entries_with_logical_parent", CallingConvention = CallingConvention.Cdecl)]
         public static extern int get_entries_with_logical_parent(UInt32 temps_index, UInt32 logical_parent);
 
-        [DllImport("rpkg.dll", EntryPoint = "get_entries_with_logical_parent_string", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "get_entries_with_logical_parent_string", CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr get_entries_with_logical_parent_string(UInt32 vector_index);
 
-        [DllImport("rpkg.dll", EntryPoint = "get_entries_with_logical_parent_data", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "get_entries_with_logical_parent_data", CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr get_entries_with_logical_parent_data();
 
-        [DllImport("rpkg.dll", EntryPoint = "get_temp_entries", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "get_temp_entries", CallingConvention = CallingConvention.Cdecl)]
         public static extern int get_temp_entries(UInt32 temps_index, string value_type, string type_string);
 
-        [DllImport("rpkg.dll", EntryPoint = "get_entries", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "get_entries", CallingConvention = CallingConvention.Cdecl)]
         public static extern int get_entries(UInt32 temps_index, UInt32 entry_index, string value_type);
 
-        [DllImport("rpkg.dll", EntryPoint = "get_entries_data", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "get_entries_data", CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr get_entries_data();
 
-        [DllImport("rpkg.dll", EntryPoint = "get_entries_hash_reference_data", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "get_entries_hash_reference_data", CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr get_entries_hash_reference_data(UInt32 temps_index, UInt32 entry_index);
 
-        [DllImport("rpkg.dll", EntryPoint = "get_entries_hash_references", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "get_entries_hash_references", CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr get_entries_hash_references(UInt32 temps_index, UInt32 entry_index);
 
-        [DllImport("rpkg.dll", EntryPoint = "update_temp_file", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "update_temp_file", CallingConvention = CallingConvention.Cdecl)]
         public static extern int update_temp_file(UInt32 temps_index, UInt32 entry_index, IntPtr update_data, UInt32 update_data_size);
 
-        [DllImport("rpkg.dll", EntryPoint = "generate_temp_file_from_data", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "generate_temp_file_from_data", CallingConvention = CallingConvention.Cdecl)]
         public static extern int generate_temp_file_from_data(UInt32 temps_index, string temp_file_path);
 
-        [DllImport("rpkg.dll", EntryPoint = "get_enum_values", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "get_enum_values", CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr get_enum_values(UInt32 temps_index, string property_type);
 
-        [DllImport("rpkg.dll", EntryPoint = "get_temp_index", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "get_temp_index", CallingConvention = CallingConvention.Cdecl)]
         public static extern int get_temp_index(string temp_hash_string);
 
-        [DllImport("rpkg.dll", EntryPoint = "get_number_of_changed_temps", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "get_number_of_changed_temps", CallingConvention = CallingConvention.Cdecl)]
         public static extern int get_number_of_changed_temps();
 
-        [DllImport("rpkg.dll", EntryPoint = "generate_temp_files_from_data", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "generate_temp_files_from_data", CallingConvention = CallingConvention.Cdecl)]
         public static extern int generate_temp_files_from_data(string temp_path);
 
-        [DllImport("rpkg.dll", EntryPoint = "get_total_numer_of_temps", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "get_total_numer_of_temps", CallingConvention = CallingConvention.Cdecl)]
         public static extern int get_total_numer_of_temps();
 
-        [DllImport("rpkg.dll", EntryPoint = "generate_rpkg_files_from_data", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "generate_rpkg_files_from_data", CallingConvention = CallingConvention.Cdecl)]
         public static extern int generate_rpkg_files_from_data(string temp_path);
 
-        [DllImport("rpkg.dll", EntryPoint = "get_top_level_logical_parents", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "get_top_level_logical_parents", CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr get_top_level_logical_parents(UInt32 temps_index);
 
-        [DllImport("rpkg.dll", EntryPoint = "get_all_bricks", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "get_all_bricks", CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr get_all_bricks(UInt32 temps_index);
 
-        [DllImport("rpkg.dll", EntryPoint = "search_temp_files", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "search_temp_files", CallingConvention = CallingConvention.Cdecl)]
         public static extern int search_temp_files(UInt32 temps_index, string search_str, int max_results);
 
-        [DllImport("rpkg.dll", EntryPoint = "get_search_temp_files", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "get_search_temp_files", CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr get_search_temp_files();
 
-        [DllImport("rpkg.dll", EntryPoint = "get_response_string", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "get_response_string", CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr get_response_string();
 
-        [DllImport("rpkg.dll", EntryPoint = "get_temp_version", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "get_temp_version", CallingConvention = CallingConvention.Cdecl)]
         public static extern int get_temp_version(UInt32 temps_index);
 
-        [DllImport("rpkg.dll", EntryPoint = "get_temp_subentity_count", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "get_temp_subentity_count", CallingConvention = CallingConvention.Cdecl)]
         public static extern int get_temp_subentity_count(UInt32 temps_index);
 
-        [DllImport("rpkg.dll", EntryPoint = "get_tblu_subentity_count", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "get_tblu_subentity_count", CallingConvention = CallingConvention.Cdecl)]
         public static extern int get_tblu_subentity_count(UInt32 temps_index);
 
-        [DllImport("rpkg.dll", EntryPoint = "get_entry_name", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "get_entry_name", CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr get_entry_name(UInt32 temp_index, int entry_index);
 
-        [DllImport("rpkg.dll", EntryPoint = "generate_json_files_from_data", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("rpkg-lib.dll", EntryPoint = "generate_json_files_from_data", CallingConvention = CallingConvention.Cdecl)]
         public static extern int generate_json_files_from_data(string temp_path);
 
         #endregion
